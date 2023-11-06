@@ -1,0 +1,21 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: MrJoshuaT <josh@jmt.me>
+Date: Mon, 6 Nov 2023 19:38:00 +0000
+Subject: [PATCH] Disable block entity ticking
+
+
+diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
+index 18aac3da3c88f33b1a71a5920a8daa27e9723913..f61c7d3f8894918393cc84481e01d30896e583c4 100644
+--- a/src/main/java/net/minecraft/server/level/ServerLevel.java
++++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
+@@ -878,7 +878,9 @@ public class ServerLevel extends Level implements WorldGenLevel {
+             timings.entityTick.stopTiming(); // Spigot
+             timings.tickEntities.stopTiming(); // Spigot
+             gameprofilerfiller.pop();
+-            this.tickBlockEntities();
++            // Bakery start
++            //this.tickBlockEntities();
++            // Bakery end
+         }
+ 
+         gameprofilerfiller.push("entityManagement");
